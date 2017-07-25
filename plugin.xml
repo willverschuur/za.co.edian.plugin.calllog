@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+id="za.co.edian.calllog"
+version="0.1.2">
+<name>Edian CallLog</name>
+<description>a Call Log plugin</description>
+<license>MIT</license>
+<keywords>phonegap,phone, phone-call</keywords>
+
+
+<js-module src="www/EdianCallLog.js" name="EdianCallLog">
+<clobbers target="window.EdianCallLog" />
+</js-module>
+
+<!-- android -->
+<platform name="android">
+<config-file target="res/xml/config.xml" parent="/*">
+<feature name="EdianCallLog">
+<param name="android-package" value="za.co.edian.calllog" />
+</feature>
+</config-file>
+
+<config-file target="AndroidManifest.xml" parent="/*">
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+</config-file>
+
+<source-file src="src/android/EdianCallLog.java" target-dir="src/za/edian/ediancalllog" />
+</platform>
+</plugin>
